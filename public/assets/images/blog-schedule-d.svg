@@ -1,0 +1,175 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="480" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#081521"/>
+      <stop offset="100%" stop-color="#0F2436"/>
+    </linearGradient>
+    <linearGradient id="deskGrad" x1="480" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ECE5DA"/>
+      <stop offset="100%" stop-color="#DDCFBE"/>
+    </linearGradient>
+    <linearGradient id="goldStrip" x1="0" y1="0" x2="800" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <filter id="shadow" x="420" y="30" width="360" height="390" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="-4" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background split: Left dark navy, Right wooden desk -->
+  <rect width="480" height="450" fill="url(#bgGrad)"/>
+  <rect x="480" width="320" height="450" fill="url(#deskGrad)"/>
+
+  <!-- Subtle wood texture lines on right -->
+  <path d="M480 80 L800 70 M480 180 L800 175 M480 290 L800 280 M480 390 L800 385" stroke="#CBB9A3" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Left Content: Title and Badges -->
+  <!-- Top Gold Badge -->
+  <rect x="36" y="34" width="88" height="22" rx="4" fill="#F59E0B"/>
+  <text x="44" y="49" fill="#0A1520" font-family="'Manrope', -apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="0.08em">GUIDE TO</text>
+
+  <!-- Main Headline -->
+  <text x="36" y="86" fill="#FFFFFF" font-family="'Manrope', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.02em">SCHEDULE D:</text>
+  <text x="36" y="118" fill="#F59E0B" font-family="'Manrope', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.02em">CAPITAL GAINS</text>
+  <text x="36" y="150" fill="#FFFFFF" font-family="'Manrope', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.02em">AND LOSSES</text>
+
+  <!-- Subtitle Paragraph -->
+  <text x="36" y="180" fill="#94A3B8" font-family="'Manrope', -apple-system, sans-serif" font-size="11" font-weight="400">Your complete guide to reporting capital gains</text>
+  <text x="36" y="196" fill="#94A3B8" font-family="'Manrope', -apple-system, sans-serif" font-size="11" font-weight="400">and losses accurately and maximizing tax efficiency.</text>
+
+  <!-- 4 Feature Icons Row -->
+  <g transform="translate(36, 222)">
+    <!-- Icon 1 -->
+    <g transform="translate(0, 0)">
+      <circle cx="20" cy="20" r="18" fill="#132B3F" stroke="#F59E0B" stroke-width="1.5"/>
+      <path d="M14 26 L26 26 M20 14 L20 26 M14 18 L26 18 M16 22 L14 18 L18 18 Z M24 22 L22 18 L26 18 Z" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round"/>
+      <text x="20" y="47" fill="#CBD5E1" font-family="'Manrope', sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">SHORT/LONG</text>
+      <text x="20" y="56" fill="#94A3B8" font-family="'Manrope', sans-serif" font-size="6.5" text-anchor="middle">GAINS</text>
+    </g>
+    <!-- Icon 2 -->
+    <g transform="translate(80, 0)">
+      <circle cx="20" cy="20" r="18" fill="#132B3F" stroke="#F59E0B" stroke-width="1.5"/>
+      <path d="M14 16 L20 12 L26 16 L20 20 Z M20 20 L20 28 M15 28 L25 28" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round"/>
+      <text x="20" y="47" fill="#CBD5E1" font-family="'Manrope', sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">CAPITAL LOSS</text>
+      <text x="20" y="56" fill="#94A3B8" font-family="'Manrope', sans-serif" font-size="6.5" text-anchor="middle">RULES</text>
+    </g>
+    <!-- Icon 3 -->
+    <g transform="translate(160, 0)">
+      <circle cx="20" cy="20" r="18" fill="#132B3F" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="14" y="13" width="12" height="15" rx="1.5" stroke="#F59E0B" stroke-width="1.2"/>
+      <line x1="17" y1="17" x2="23" y2="17" stroke="#F59E0B" stroke-width="1.2"/>
+      <line x1="17" y1="21" x2="23" y2="21" stroke="#F59E0B" stroke-width="1.2"/>
+      <text x="20" y="47" fill="#CBD5E1" font-family="'Manrope', sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">FORM 8949</text>
+      <text x="20" y="56" fill="#94A3B8" font-family="'Manrope', sans-serif" font-size="6.5" text-anchor="middle">SCHEDULE D</text>
+    </g>
+    <!-- Icon 4 -->
+    <g transform="translate(240, 0)">
+      <circle cx="20" cy="20" r="18" fill="#132B3F" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="15" y="13" width="10" height="14" rx="2" stroke="#F59E0B" stroke-width="1.2"/>
+      <circle cx="18" cy="17" r="1" fill="#F59E0B"/>
+      <circle cx="22" cy="17" r="1" fill="#F59E0B"/>
+      <circle cx="18" cy="21" r="1" fill="#F59E0B"/>
+      <circle cx="22" cy="21" r="1" fill="#F59E0B"/>
+      <text x="20" y="47" fill="#CBD5E1" font-family="'Manrope', sans-serif" font-size="7.5" font-weight="600" text-anchor="middle">STEP-BY-STEP</text>
+      <text x="20" y="56" fill="#94A3B8" font-family="'Manrope', sans-serif" font-size="6.5" text-anchor="middle">FILING GUIDE</text>
+    </g>
+  </g>
+
+  <!-- Bottom Gold Banner (Inside This Guide) -->
+  <g transform="translate(0, 360)">
+    <rect width="480" height="90" fill="url(#goldStrip)"/>
+    <rect x="480" width="320" height="90" fill="#0A1824"/>
+    
+    <text x="36" y="28" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="11" font-weight="900" letter-spacing="0.08em">INSIDE</text>
+    <text x="36" y="42" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="11" font-weight="900" letter-spacing="0.08em">THIS GUIDE:</text>
+
+    <text x="130" y="24" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">• When to File Schedule D</text>
+    <text x="130" y="38" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">• How Short-Term &amp; Long-Term Gains Are Taxed</text>
+    <text x="130" y="52" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">• Capital Loss Rules &amp; Carryovers</text>
+    <text x="130" y="66" fill="#0A1520" font-family="'Manrope', sans-serif" font-size="9.5" font-weight="700">• Examples &amp; Practical Tax Tips</text>
+
+    <!-- Right side small summary -->
+    <text x="510" y="34" fill="#CBD5E1" font-family="'Manrope', sans-serif" font-size="10" font-weight="700">Understand. Report. Save.</text>
+    <text x="510" y="52" fill="#94A3B8" font-family="'Manrope', sans-serif" font-size="9">Make every investment decision count at tax time.</text>
+  </g>
+
+  <!-- Right Side Visual Elements: Clipboard with Schedule D document -->
+  <g filter="url(#shadow)">
+    <!-- Clipboard Board -->
+    <rect x="450" y="40" width="280" height="300" rx="14" fill="#6B5B49"/>
+    <!-- Top Clip -->
+    <rect x="540" y="32" width="100" height="24" rx="4" fill="#C5C2BA" stroke="#7A7870" stroke-width="1.5"/>
+    <circle cx="590" cy="44" r="5" fill="#4B4944"/>
+    
+    <!-- White Paper Document -->
+    <rect x="466" y="56" width="248" height="270" rx="4" fill="#FFFFFF"/>
+    
+    <!-- Document Header -->
+    <text x="480" y="78" fill="#0F172A" font-family="'Manrope', sans-serif" font-size="10" font-weight="800">SCHEDULE D (Form 1040)</text>
+    <text x="480" y="90" fill="#64748B" font-family="'Manrope', sans-serif" font-size="7.5">Capital Gains and Losses</text>
+    <line x1="480" y1="96" x2="696" y2="96" stroke="#E2E8F0" stroke-width="1"/>
+
+    <!-- Document Table Header -->
+    <rect x="480" y="104" width="216" height="14" fill="#F1F5F9"/>
+    <line x1="480" y1="104" x2="696" y2="104" stroke="#CBD5E1" stroke-width="0.8"/>
+    <line x1="480" y1="118" x2="696" y2="118" stroke="#CBD5E1" stroke-width="0.8"/>
+    <text x="486" y="114" fill="#475467" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="700">(a) Description</text>
+    <text x="546" y="114" fill="#475467" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="700">(b) Acquired</text>
+    <text x="600" y="114" fill="#475467" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="700">(c) Sold</text>
+    <text x="650" y="114" fill="#475467" font-family="'Manrope', sans-serif" font-size="6.5" font-weight="700">(d) Proceeds</text>
+
+    <!-- Table Rows -->
+    <line x1="480" y1="134" x2="696" y2="134" stroke="#E2E8F0" stroke-width="0.8"/>
+    <line x1="480" y1="150" x2="696" y2="150" stroke="#E2E8F0" stroke-width="0.8"/>
+    <line x1="480" y1="166" x2="696" y2="166" stroke="#E2E8F0" stroke-width="0.8"/>
+    <line x1="480" y1="182" x2="696" y2="182" stroke="#E2E8F0" stroke-width="0.8"/>
+    <line x1="480" y1="198" x2="696" y2="198" stroke="#E2E8F0" stroke-width="0.8"/>
+    <line x1="480" y1="214" x2="696" y2="214" stroke="#E2E8F0" stroke-width="0.8"/>
+
+    <!-- Subtle simulated data lines -->
+    <rect x="486" y="124" width="48" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="546" y="124" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="600" y="124" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="654" y="124" width="32" height="5" rx="1" fill="#6ABE52" fill-opacity="0.6"/>
+
+    <rect x="486" y="140" width="52" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="546" y="140" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="600" y="140" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="654" y="140" width="32" height="5" rx="1" fill="#6ABE52" fill-opacity="0.6"/>
+
+    <rect x="486" y="156" width="40" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="546" y="156" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="600" y="156" width="36" height="5" rx="1" fill="#E2E8F0"/>
+    <rect x="654" y="156" width="32" height="5" rx="1" fill="#EF4444" fill-opacity="0.5"/>
+
+    <!-- Small Chart at bottom of paper -->
+    <rect x="486" y="230" width="200" height="74" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="0.8"/>
+    <path d="M496 284 L530 268 L564 274 L598 250 L632 258 L666 242" stroke="#6ABE52" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="666" cy="242" r="3" fill="#6ABE52"/>
+  </g>
+
+  <!-- Pen resting diagonally on right side -->
+  <g transform="translate(680, 200) rotate(22)">
+    <rect x="0" y="0" width="10" height="150" rx="3" fill="#1E293B"/>
+    <rect x="0" y="20" width="10" height="6" fill="#E2E8F0"/>
+    <polygon points="0,0 5,-14 10,0" fill="#CBD5E1"/>
+    <polygon points="4,-14 5,-18 6,-14" fill="#0F172A"/>
+  </g>
+
+  <!-- Sleek Calculator on bottom right -->
+  <g transform="translate(714, 150) rotate(-6)">
+    <rect x="0" y="0" width="65" height="110" rx="6" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+    <rect x="6" y="8" width="53" height="22" rx="3" fill="#334155"/>
+    <text x="54" y="24" fill="#38BDF8" font-family="monospace" font-size="11" font-weight="700" text-anchor="end">14,250.00</text>
+    <!-- Buttons grid -->
+    <g fill="#475467">
+      <rect x="6" y="36" width="10" height="10" rx="2"/><rect x="20" y="36" width="10" height="10" rx="2"/><rect x="34" y="36" width="10" height="10" rx="2"/><rect x="48" y="36" width="11" height="10" rx="2" fill="#F59E0B"/>
+      <rect x="6" y="50" width="10" height="10" rx="2"/><rect x="20" y="50" width="10" height="10" rx="2"/><rect x="34" y="50" width="10" height="10" rx="2"/><rect x="48" y="50" width="11" height="10" rx="2" fill="#F59E0B"/>
+      <rect x="6" y="64" width="10" height="10" rx="2"/><rect x="20" y="64" width="10" height="10" rx="2"/><rect x="34" y="64" width="10" height="10" rx="2"/><rect x="48" y="64" width="11" height="10" rx="2" fill="#F59E0B"/>
+      <rect x="6" y="78" width="10" height="10" rx="2"/><rect x="20" y="78" width="10" height="10" rx="2"/><rect x="34" y="78" width="10" height="10" rx="2"/><rect x="48" y="78" width="11" height="24" rx="2" fill="#6ABE52"/>
+      <rect x="6" y="92" width="24" height="10" rx="2"/><rect x="34" y="92" width="10" height="10" rx="2"/>
+    </g>
+  </g>
+</svg>

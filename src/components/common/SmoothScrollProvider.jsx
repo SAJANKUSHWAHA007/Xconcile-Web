@@ -68,6 +68,34 @@ export default function SmoothScrollProvider({ children }) {
       // Don't intercept if ctrl is held (page zoom)
       if (e.ctrlKey) return;
 
+      // Allow native scrolling inside nested scrollable containers (e.g. Autocomplete dropdown, menu, drawer)
+      let el = e.target;
+      while (el && el !== document.body && el !== document.documentElement) {
+        if (
+          el.getAttribute?.('role') === 'listbox' ||
+          el.classList?.contains('MuiAutocomplete-listbox') ||
+          el.classList?.contains('MuiMenu-list') ||
+          el.classList?.contains('MuiPaper-root')
+        ) {
+          return;
+        }
+
+        try {
+          const style = window.getComputedStyle(el);
+          const overflowY = style.overflowY;
+          if ((overflowY === 'auto' || overflowY === 'scroll') && el.scrollHeight > el.clientHeight) {
+            const atTop = el.scrollTop <= 0 && e.deltaY < 0;
+            const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 1 && e.deltaY > 0;
+            if (!atTop && !atBottom) {
+              return;
+            }
+          }
+        } catch {
+          // ignore
+        }
+        el = el.parentElement;
+      }
+
       e.preventDefault();
 
       const maxScroll = Math.max(0, getMaxScroll());

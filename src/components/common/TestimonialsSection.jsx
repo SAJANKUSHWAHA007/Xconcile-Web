@@ -10,28 +10,6 @@ import Image from 'next/image';
 import TrendingDownOutlinedIcon from '@mui/icons-material/TrendingDownOutlined';
 import CustomButton from '@/components/common/CustomButton';
 
-/**
- * Common Testimonials / Case Studies Section
- * Reusable across multiple pages with customizable:
- * - badge (e.g. 'Testimonials')
- * - title (e.g. 'Trusted by Businesses & CPA Firms')
- * - subtitle (e.g. 'We work with the accounting platforms...')
- * - items: array of category case studies:
- *   [{
- *      category: 'CPA Firms',
- *      title: 'CPA Firms',
- *      image: '/assets/images/testimonial.svg',
- *      badgeLabel: 'Workload Impact',
- *      badgeValue: '42% Reduced',
- *      badgeIcon: <TrendingDownOutlinedIcon />,
- *      challenge: '...',
- *      solution: '...',
- *      result: '...',
- *      ctaLabel: 'View Case Study',
- *      ctaHref: '#contact'
- *   }]
- * - maxWidth: default 'xl'
- */
 export default function TestimonialsSection({
   id = 'testimonials',
   badge = 'Testimonials',
@@ -201,9 +179,9 @@ export default function TestimonialsSection({
         <Grid
           container
           spacing={{ xs: 4, md: 6, lg: 8 }}
-          alignItems="center"
           key={selectedCategory}
           sx={{
+            alignItems: 'center',
             animation: 'fadeIn 0.4s ease-in-out',
             '@keyframes fadeIn': {
               '0%': { opacity: 0, transform: 'translateY(12px)' },

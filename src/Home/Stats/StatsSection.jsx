@@ -68,8 +68,8 @@ function StatItem({ target, suffix, label, inView, isDecimal = false, hasBorderR
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
-        py: { xs: 3.5, sm: 4, md: 5 },
-        px: { xs: 2, sm: 2.5, md: 3 },
+        py: { xs: 3.5, sm: 4, md: 3.5, lg: 4.5, xl: 5 },
+        px: { xs: 2, sm: 2, md: 1, lg: 1.75, xl: 3 },
         height: '100%',
         borderRight: {
           xs: 'none',
@@ -84,11 +84,11 @@ function StatItem({ target, suffix, label, inView, isDecimal = false, hasBorderR
       <Typography
         sx={{
           fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-          fontSize: { xs: '2.5rem', sm: '3rem', md: '3.25rem', lg: '3.65rem' },
+          fontSize: { xs: '2.25rem', sm: '2.75rem', md: '2.35rem', lg: '2.85rem', xl: '3.65rem' },
           fontWeight: 700,
           lineHeight: 1.1,
           color: '#6ABE52',
-          mb: 1.25,
+          mb: { xs: 1, md: 0.75, lg: 1.25 },
           letterSpacing: '-0.02em',
         }}
       >
@@ -99,11 +99,13 @@ function StatItem({ target, suffix, label, inView, isDecimal = false, hasBorderR
       <Typography
         sx={{
           fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-          fontSize: { xs: '0.925rem', sm: '1rem', md: '1.05rem', lg: '1.1rem' },
+          fontSize: { xs: '0.925rem', sm: '1rem', md: '0.85rem', lg: '0.95rem', xl: '1.05rem' },
           fontWeight: 500,
           color: '#344054',
-          lineHeight: 1.4,
-          whiteSpace: 'nowrap',
+          lineHeight: 1.35,
+          whiteSpace: 'normal',
+          maxWidth: { xs: '200px', md: '145px', lg: '180px', xl: 'none' },
+          mx: 'auto',
         }}
       >
         {label}
@@ -158,14 +160,13 @@ export default function StatsSection() {
         maxWidth="xl"
         disableGutters
         sx={{
-          px: { xs: 2.5, sm: 3.5, md: 4, lg: 5 },
+          px: { xs: 2.5, sm: 3.5, md: 2.5, lg: 4, xl: 5 },
         }}
       >
         <Grid
           container
           columns={{ xs: 12, sm: 12, md: 5 }}
-          alignItems="center"
-          sx={{ width: '100%' }}
+          sx={{ width: '100%', alignItems: 'center' }}
         >
           {/* Stat 1: 10+ Years of Experience */}
           <Grid size={{ xs: 12, sm: 6, md: 1 }}>
@@ -219,17 +220,17 @@ export default function StatsSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                py: { xs: 3.5, sm: 4, md: 5 },
-                px: { xs: 2, sm: 2.5, md: 3 },
-                gap: { xs: 2.5, sm: 3 },
+                py: { xs: 3.5, sm: 4, md: 3.5, lg: 4.5, xl: 5 },
+                px: { xs: 2, sm: 2, md: 0.75, lg: 1.75, xl: 3 },
+                gap: { xs: 2, sm: 2.5, md: 1.25, lg: 2, xl: 3 },
                 height: '100%',
               }}
             >
               {/* ISO Certified Badge */}
               <Box
                 sx={{
-                  width: { xs: 62, sm: 68, md: 72, lg: 76 },
-                  height: { xs: 62, sm: 68, md: 72, lg: 76 },
+                  width: { xs: 56, sm: 64, md: 52, lg: 64, xl: 76 },
+                  height: { xs: 56, sm: 64, md: 52, lg: 64, xl: 76 },
                   position: 'relative',
                   flexShrink: 0,
                 }}
@@ -246,7 +247,7 @@ export default function StatsSection() {
               <Box
                 sx={{
                   width: '1px',
-                  height: { xs: 40, sm: 44, md: 48 },
+                  height: { xs: 38, sm: 42, md: 36, lg: 44, xl: 48 },
                   backgroundColor: '#E2E8F0',
                   flexShrink: 0,
                 }}
@@ -259,7 +260,7 @@ export default function StatsSection() {
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   justifyContent: 'center',
-                  gap: 0.75,
+                  gap: 0.5,
                 }}
               >
                 {/* Star + 5.0 */}
@@ -267,19 +268,19 @@ export default function StatsSection() {
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 0.75,
+                    gap: 0.5,
                   }}
                 >
                   <StarIcon
                     sx={{
-                      fontSize: { xs: 20, md: 22 },
+                      fontSize: { xs: 18, md: 18, lg: 20, xl: 22 },
                       color: '#F59E0B',
                     }}
                   />
                   <Typography
                     sx={{
                       fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                      fontSize: { xs: '1.05rem', md: '1.15rem' },
+                      fontSize: { xs: '0.95rem', md: '0.95rem', lg: '1.05rem', xl: '1.15rem' },
                       fontWeight: 700,
                       color: '#1E293B',
                       lineHeight: 1,
@@ -292,8 +293,8 @@ export default function StatsSection() {
                 {/* Google Logo */}
                 <Box
                   sx={{
-                    width: { xs: 84, sm: 90, md: 96 },
-                    height: { xs: 28, md: 30 },
+                    width: { xs: 74, sm: 84, md: 70, lg: 82, xl: 96 },
+                    height: { xs: 24, md: 24, lg: 28, xl: 30 },
                     position: 'relative',
                   }}
                 >

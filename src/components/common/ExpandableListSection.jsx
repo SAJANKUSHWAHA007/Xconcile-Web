@@ -13,16 +13,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import CustomButton from '@/components/common/CustomButton';
 
-/**
- * Common Expandable List Section
- * Reusable across multiple pages with customizable:
- * - badge (e.g. 'Services')
- * - title (e.g. 'Our Accounting Outsourcing Services')
- * - subtitle (e.g. 'From everyday bookkeeping to strategic financial planning...')
- * - items array: [{ number, icon, title, description, details }]
- * - initialVisibleCount
- * - showMoreLabel & showLessLabel
- */
+
 export default function ExpandableListSection({
   id = 'services-section',
   badge = 'Services',
