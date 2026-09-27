@@ -303,35 +303,65 @@ export default function ExpandableListSection({
                                   : 'repeat(2, 1fr)',
                             },
                             gap: { xs: 2, sm: 2.5 },
-                            mb: 3,
+                            mb: item.ctaLabel ? 3 : 1,
                           }}
                         >
                           {item.groups.map((group, gIdx) => (
                             <Box
                               key={gIdx}
                               sx={{
-                                backgroundColor: '#F8FAFC',
-                                border: '1px solid #EAECF0',
+                                backgroundColor: group.cardBg || '#F8FAFC',
+                                border: `1px solid ${group.borderColor || '#EAECF0'}`,
                                 borderRadius: '14px',
-                                p: { xs: 2, sm: 2.5 },
+                                p: { xs: 2.25, sm: 2.75 },
                                 transition: 'all 0.2s ease',
                                 '&:hover': {
-                                  borderColor: 'rgba(106, 190, 82, 0.35)',
-                                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)',
+                                  boxShadow: '0 6px 18px rgba(0, 0, 0, 0.04)',
                                 },
                               }}
                             >
-                              <Typography
-                                sx={{
-                                  fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                                  fontSize: { xs: '0.925rem', sm: '0.975rem' },
-                                  fontWeight: 700,
-                                  color: '#0F172A',
-                                  mb: 1.5,
-                                }}
-                              >
-                                {group.title}
-                              </Typography>
+                              {group.icon ? (
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 2 }}>
+                                  <Box
+                                    sx={{
+                                      width: 32,
+                                      height: 32,
+                                      borderRadius: '8px',
+                                      backgroundColor: group.iconBg || (group.dotColor || '#2563EB'),
+                                      color: '#FFFFFF',
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      flexShrink: 0,
+                                      '& svg': { fontSize: 18 },
+                                    }}
+                                  >
+                                    {group.icon}
+                                  </Box>
+                                  <Typography
+                                    sx={{
+                                      fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                                      fontSize: { xs: '0.95rem', sm: '1.05rem' },
+                                      fontWeight: 700,
+                                      color: '#0F172A',
+                                    }}
+                                  >
+                                    {group.title}
+                                  </Typography>
+                                </Box>
+                              ) : (
+                                <Typography
+                                  sx={{
+                                    fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                                    fontSize: { xs: '0.95rem', sm: '1.05rem' },
+                                    fontWeight: 700,
+                                    color: '#0F172A',
+                                    mb: 2,
+                                  }}
+                                >
+                                  {group.title}
+                                </Typography>
+                              )}
 
                               <Box
                                 component="ul"
@@ -359,7 +389,7 @@ export default function ExpandableListSection({
                                         width: 6,
                                         height: 6,
                                         borderRadius: '50%',
-                                        backgroundColor: '#6ABE52',
+                                        backgroundColor: group.dotColor || '#6ABE52',
                                         flexShrink: 0,
                                         mt: '7.5px',
                                       }}
@@ -367,7 +397,7 @@ export default function ExpandableListSection({
                                     <Typography
                                       sx={{
                                         fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                                        fontSize: { xs: '0.85rem', sm: '0.875rem' },
+                                        fontSize: { xs: '0.85rem', sm: '0.885rem' },
                                         color: '#475467',
                                         lineHeight: 1.55,
                                       }}
@@ -381,18 +411,20 @@ export default function ExpandableListSection({
                           ))}
                         </Box>
 
-                        <Box sx={{ mt: 1, mb: 1, width: '100%' }}>
-                          <CustomButton
-                            text={item.ctaLabel || `Explore ${item.title}`}
-                            href={item.href || '#contact'}
-                            size="medium"
-                            sx={{
-                              width: { xs: '100%', sm: 'auto' },
-                              justifyContent: { xs: 'space-between', sm: 'center' },
-                              py: 1.1,
-                            }}
-                          />
-                        </Box>
+                        {item.ctaLabel && (
+                          <Box sx={{ mt: 1, mb: 1, width: '100%' }}>
+                            <CustomButton
+                              text={item.ctaLabel || `Explore ${item.title}`}
+                              href={item.href || '#contact'}
+                              size="medium"
+                              sx={{
+                                width: { xs: '100%', sm: 'auto' },
+                                justifyContent: { xs: 'space-between', sm: 'center' },
+                                py: 1.1,
+                              }}
+                            />
+                          </Box>
+                        )}
                       </Box>
                     ) : Array.isArray(item.points) && item.points.length > 0 ? (
                       <Box sx={{ width: '100%' }}>

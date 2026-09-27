@@ -36,7 +36,7 @@ export const navDropdownData = {
         title: 'Multi-State Sales & Use Tax Compliance',
         description: 'Reliable sales & use tax compliance support for multi-state operations.',
         icon: <BusinessCenterOutlinedIcon sx={{ fontSize: 22 }} />,
-        href: '#services',
+        href: '/multi-state-sales-tax-compliance',
       },
       {
         title: 'Outsourced Accounting & Bookkeeping',

@@ -22,6 +22,7 @@ export default function IndustryGridSection({
   items = [],
   autoScrollDelay = 2500,
   maxWidth = 'xl',
+  headerMaxWidth = '950px',
   sx = {},
 }) {
   const sectionRef = React.useRef(null);
@@ -212,7 +213,7 @@ export default function IndustryGridSection({
         <Box
           sx={{
             textAlign: 'center',
-            maxWidth: '760px',
+            maxWidth: headerMaxWidth,
             mx: 'auto',
             mb: { xs: 4, sm: 5, md: 6 },
             opacity: inView ? 1 : 0,
@@ -258,10 +259,10 @@ export default function IndustryGridSection({
             sx={{
               fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
               fontSize: {
-                xs: '1.95rem',
-                sm: '2.35rem',
-                md: '2.75rem',
-                lg: '3.15rem',
+                xs: '1.85rem',
+                sm: '2.25rem',
+                md: '2.55rem',
+                lg: '2.85rem',
               },
               fontWeight: 700,
               lineHeight: 1.2,

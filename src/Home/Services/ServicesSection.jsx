@@ -46,6 +46,7 @@ const accountingServicesData = [
       'External auditor liaison',
     ],
     ctaLabel: 'Explore Audit & Assurance',
+    ctaHref: '/audit-outsourcing-services',
   },
   {
     number: '03',
@@ -80,6 +81,7 @@ const accountingServicesData = [
       'State audit defense & notice resolution',
     ],
     ctaLabel: 'Explore Sales & Use Tax Compliance',
+    ctaHref: '/multi-state-sales-tax-compliance',
   },
   {
     number: '05',

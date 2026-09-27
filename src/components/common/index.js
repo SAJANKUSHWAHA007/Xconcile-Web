@@ -12,5 +12,10 @@ export { default as ChallengesSection } from './ChallengesSection';
 export { default as ToolsTabsSection } from './ToolsTabsSection';
 export { default as WhyChooseUsSection } from './WhyChooseUsSection';
 export { default as CtaBannerSection } from './CtaBannerSection';
+export { default as HeroSection } from './HeroSection';
+export { default as StatsSection } from './StatsSection';
+export { default as AccountingSupportSection } from './AccountingSupportSection';
+export { default as AccountingTeamBannerSection } from './AccountingTeamBannerSection';
+export { default as TeamBannerSection } from './AccountingTeamBannerSection';
 export { default } from './CustomButton';
 

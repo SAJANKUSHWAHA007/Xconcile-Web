@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import CustomButton from '@/components/common/CustomButton';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import CustomButton from "@/components/common/CustomButton";
 
 export default function ChallengesSection({
-  id = 'challenges',
-  badge = 'Key Challenges',
+  id = "challenges",
+  badge = "Key Challenges",
   title,
   description,
-  buttonText = 'Talk to Our Team',
-  buttonHref = '/#contact',
+  buttonText = "Talk to Our Team",
+  buttonHref = "/#contact",
   items = [],
   challenges = [],
   sx = {},
@@ -25,11 +25,11 @@ export default function ChallengesSection({
       component="section"
       id={id}
       sx={{
-        width: '100%',
-        backgroundColor: '#FFFFFF',
+        width: "100%",
+        backgroundColor: "#FFFFFF",
         py: { xs: 7, sm: 9, md: 11 },
-        position: 'relative',
-        overflow: 'hidden',
+        position: "relative",
+        overflow: "hidden",
         ...sx,
       }}
     >
@@ -43,13 +43,13 @@ export default function ChallengesSection({
         <Grid
           container
           spacing={{ xs: 5, md: 6, lg: 8 }}
-          sx={{ alignItems: 'flex-start' }}
+          sx={{ alignItems: "flex-start" }}
         >
           {/* Left Column: Heading, Badge, Description & CTA */}
           <Grid
             size={{ xs: 12, md: 5.5 }}
             sx={{
-              position: { md: 'sticky' },
+              position: { md: "sticky" },
               top: { md: 110 },
             }}
           >
@@ -57,11 +57,11 @@ export default function ChallengesSection({
             {badge && (
               <Box
                 sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  backgroundColor: '#EAF7E8',
-                  border: '1px solid rgba(106, 190, 82, 0.25)',
-                  borderRadius: '9999px',
+                  display: "inline-flex",
+                  alignItems: "center",
+                  backgroundColor: "#EAF7E8",
+                  border: "1px solid rgba(106, 190, 82, 0.25)",
+                  borderRadius: "9999px",
                   px: 2,
                   py: 0.65,
                   mb: { xs: 2.5, md: 3 },
@@ -70,10 +70,10 @@ export default function ChallengesSection({
                 <Typography
                   sx={{
                     fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                    fontSize: '0.85rem',
+                    fontSize: "0.85rem",
                     fontWeight: 600,
-                    color: '#6ABE52',
-                    letterSpacing: '0.01em',
+                    color: "#6ABE52",
+                    letterSpacing: "0.01em",
                   }}
                 >
                   {badge}
@@ -88,11 +88,11 @@ export default function ChallengesSection({
                 component="h2"
                 sx={{
                   fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                  fontSize: { xs: '1.95rem', sm: '2.35rem', md: '2.75rem' },
+                  fontSize: { xs: "1.95rem", sm: "2.35rem", md: "2.75rem" },
                   fontWeight: 700,
                   lineHeight: 1.2,
-                  color: '#0F172A',
-                  letterSpacing: '-0.02em',
+                  color: "#0F172A",
+                  letterSpacing: "-0.02em",
                   mb: 2.5,
                 }}
               >
@@ -105,10 +105,10 @@ export default function ChallengesSection({
               <Typography
                 sx={{
                   fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                  fontSize: { xs: '0.95rem', md: '1rem' },
+                  fontSize: { xs: "0.95rem", md: "1rem" },
                   lineHeight: 1.65,
-                  color: '#475467',
-                  maxWidth: { xs: '100%', md: '500px' },
+                  color: "#475467",
+                  maxWidth: { xs: "100%", md: "500px" },
                   mb: 4.5,
                 }}
               >
@@ -128,7 +128,7 @@ export default function ChallengesSection({
                     py: 1.35,
                     pl: 3.5,
                     pr: 1.35,
-                    fontSize: '1rem',
+                    fontSize: "1rem",
                     fontWeight: 600,
                   }}
                 />
@@ -140,8 +140,8 @@ export default function ChallengesSection({
           <Grid size={{ xs: 12, md: 6.5 }}>
             <Box
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
+                display: "flex",
+                flexDirection: "column",
                 gap: { xs: 2, sm: 2.5 },
               }}
             >
@@ -149,18 +149,18 @@ export default function ChallengesSection({
                 <Box
                   key={item.title}
                   sx={{
-                    backgroundColor: item.cardBg || '#FFFFFF',
-                    border: `1px solid ${item.borderColor || '#EAECF0'}`,
-                    borderRadius: '16px',
+                    backgroundColor: item.cardBg || "#FFFFFF",
+                    border: `1px solid ${item.borderColor || "#EAECF0"}`,
+                    borderRadius: "16px",
                     p: { xs: 2.5, sm: 3 },
-                    display: 'flex',
-                    alignItems: 'flex-start',
+                    display: "flex",
+                    alignItems: "flex-start",
                     gap: { xs: 2, sm: 2.5 },
-                    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)',
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-                    '&:hover': {
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 24px rgba(0, 0, 0, 0.05)',
+                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.02)",
+                    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 8px 24px rgba(0, 0, 0, 0.05)",
                     },
                   }}
                 >
@@ -170,12 +170,12 @@ export default function ChallengesSection({
                       sx={{
                         width: { xs: 44, sm: 48 },
                         height: { xs: 44, sm: 48 },
-                        borderRadius: '12px',
-                        backgroundColor: item.iconBg || '#F1F5F9',
-                        color: item.iconColor || '#6ABE52',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        borderRadius: "12px",
+                        backgroundColor: item.iconBg || "#F1F5F9",
+                        color: item.iconColor || "#6ABE52",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         flexShrink: 0,
                       }}
                     >
@@ -189,10 +189,11 @@ export default function ChallengesSection({
                       variant="h6"
                       component="h3"
                       sx={{
-                        fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                        fontSize: { xs: '1.05rem', sm: '1.15rem' },
+                        fontFamily:
+                          'var(--font-manrope), "Manrope", sans-serif',
+                        fontSize: { xs: "1.05rem", sm: "1.15rem" },
                         fontWeight: 700,
-                        color: '#0F172A',
+                        color: "#0F172A",
                         lineHeight: 1.3,
                         mb: 0.75,
                       }}
@@ -201,9 +202,10 @@ export default function ChallengesSection({
                     </Typography>
                     <Typography
                       sx={{
-                        fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                        fontSize: { xs: '0.875rem', sm: '0.925rem' },
-                        color: '#475467',
+                        fontFamily:
+                          'var(--font-manrope), "Manrope", sans-serif',
+                        fontSize: { xs: "0.875rem", sm: "0.925rem" },
+                        color: "#475467",
                         lineHeight: 1.55,
                       }}
                     >
