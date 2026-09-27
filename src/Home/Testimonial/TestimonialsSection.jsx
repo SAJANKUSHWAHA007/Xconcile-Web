@@ -98,6 +98,7 @@ export default function HomeTestimonialsSection() {
       title="Trusted by Businesses & CPA Firms"
       subtitle="We work with the accounting platforms and business tools your company already uses."
       items={homeTestimonialsData}
+      imagePosition="right"
       maxWidth="xl"
     />
   );

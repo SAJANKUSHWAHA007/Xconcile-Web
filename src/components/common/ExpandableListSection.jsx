@@ -286,8 +286,115 @@ export default function ExpandableListSection({
                       </Typography>
                     )}
 
-                    {/* If item.points is provided, render the Key services bullet list & CTA button */}
-                    {Array.isArray(item.points) && item.points.length > 0 ? (
+                    {/* If item.groups is provided, render grouped cards & CTA button */}
+                    {Array.isArray(item.groups) && item.groups.length > 0 ? (
+                      <Box sx={{ width: '100%' }}>
+                        <Box
+                          sx={{
+                            display: 'grid',
+                            gridTemplateColumns: {
+                              xs: '1fr',
+                              sm: item.groups.length === 2 ? 'repeat(2, 1fr)' : '1fr',
+                              md:
+                                item.groups.length === 2
+                                  ? 'repeat(2, 1fr)'
+                                  : item.groups.length === 3
+                                  ? 'repeat(3, 1fr)'
+                                  : 'repeat(2, 1fr)',
+                            },
+                            gap: { xs: 2, sm: 2.5 },
+                            mb: 3,
+                          }}
+                        >
+                          {item.groups.map((group, gIdx) => (
+                            <Box
+                              key={gIdx}
+                              sx={{
+                                backgroundColor: '#F8FAFC',
+                                border: '1px solid #EAECF0',
+                                borderRadius: '14px',
+                                p: { xs: 2, sm: 2.5 },
+                                transition: 'all 0.2s ease',
+                                '&:hover': {
+                                  borderColor: 'rgba(106, 190, 82, 0.35)',
+                                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)',
+                                },
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                                  fontSize: { xs: '0.925rem', sm: '0.975rem' },
+                                  fontWeight: 700,
+                                  color: '#0F172A',
+                                  mb: 1.5,
+                                }}
+                              >
+                                {group.title}
+                              </Typography>
+
+                              <Box
+                                component="ul"
+                                sx={{
+                                  listStyle: 'none',
+                                  p: 0,
+                                  m: 0,
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  gap: 1.25,
+                                }}
+                              >
+                                {group.points.map((pt, pIdx) => (
+                                  <Box
+                                    component="li"
+                                    key={pIdx}
+                                    sx={{
+                                      display: 'flex',
+                                      alignItems: 'flex-start',
+                                      gap: 1.25,
+                                    }}
+                                  >
+                                    <Box
+                                      sx={{
+                                        width: 6,
+                                        height: 6,
+                                        borderRadius: '50%',
+                                        backgroundColor: '#6ABE52',
+                                        flexShrink: 0,
+                                        mt: '7.5px',
+                                      }}
+                                    />
+                                    <Typography
+                                      sx={{
+                                        fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                                        fontSize: { xs: '0.85rem', sm: '0.875rem' },
+                                        color: '#475467',
+                                        lineHeight: 1.55,
+                                      }}
+                                    >
+                                      {pt}
+                                    </Typography>
+                                  </Box>
+                                ))}
+                              </Box>
+                            </Box>
+                          ))}
+                        </Box>
+
+                        <Box sx={{ mt: 1, mb: 1, width: '100%' }}>
+                          <CustomButton
+                            text={item.ctaLabel || `Explore ${item.title}`}
+                            href={item.href || '#contact'}
+                            size="medium"
+                            sx={{
+                              width: { xs: '100%', sm: 'auto' },
+                              justifyContent: { xs: 'space-between', sm: 'center' },
+                              py: 1.1,
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    ) : Array.isArray(item.points) && item.points.length > 0 ? (
                       <Box sx={{ width: '100%' }}>
                         <Typography
                           sx={{

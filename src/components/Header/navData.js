@@ -30,7 +30,7 @@ export const navDropdownData = {
         title: 'Audit Outsourcing Services',
         description: 'Trusted audit and assurance support services for CPA firms and growing businesses.',
         icon: <VerifiedUserOutlinedIcon sx={{ fontSize: 22 }} />,
-        href: '#services',
+        href: '/audit-outsourcing-services',
       },
       {
         title: 'Multi-State Sales & Use Tax Compliance',

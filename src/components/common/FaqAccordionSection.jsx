@@ -6,6 +6,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Collapse from '@mui/material/Collapse';
+import Button from '@mui/material/Button';
+import Link from 'next/link';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export const defaultFaqItems = [
   {
@@ -40,12 +43,13 @@ export const defaultFaqItems = [
   },
 ];
 
-
 export default function FaqAccordionSection({
   id = 'faq',
   badge = 'FAQ',
   title = 'Frequently asked\nquestions',
   subtitle = "Still have Questions?\nDrop us a message and we'll get back to you",
+  buttonText = 'Get in Touch',
+  buttonHref = '#contact',
   items = defaultFaqItems,
   maxWidth = 'xl',
   background = '#FFFFFF',
@@ -98,9 +102,15 @@ export default function FaqAccordionSection({
         overflow: 'hidden',
       }}
     >
-      <Container maxWidth={maxWidth}>
+      <Container
+        maxWidth={maxWidth}
+        disableGutters
+        sx={{
+          px: { xs: 2.5, sm: 3.5, md: 5, lg: 6, xl: 8 },
+        }}
+      >
         <Grid container spacing={{ xs: 5, md: 7, lg: 9 }} sx={{ alignItems: 'flex-start' }}>
-          {/* Left Column: Badge, Title & Contact Prompt */}
+          {/* Left Column: Badge, Title, Subtitle & CTA Button */}
           <Grid size={{ xs: 12, md: 4.8 }}>
             <Box
               sx={{
@@ -109,7 +119,8 @@ export default function FaqAccordionSection({
                 top: { md: 100 },
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(24px)',
-                transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                transition:
+                  'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
               {/* FAQ Pill Badge */}
@@ -170,10 +181,56 @@ export default function FaqAccordionSection({
                     whiteSpace: 'pre-line',
                     maxWidth: { xs: '420px', md: '100%' },
                     mx: { xs: 'auto', md: 'unset' },
+                    mb: buttonText ? { xs: 3, md: 4 } : 0,
                   }}
                 >
                   {subtitle}
                 </Typography>
+              )}
+
+              {/* Get in Touch CTA Button */}
+              {buttonText && (
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                  }}
+                >
+                  <Button
+                    component={Link}
+                    href={buttonHref}
+                    endIcon={
+                      <ArrowForwardIcon
+                        sx={{
+                          fontSize: 18,
+                          transition: 'transform 0.2s ease-in-out',
+                        }}
+                      />
+                    }
+                    sx={{
+                      backgroundColor: '#6ABE52',
+                      color: '#FFFFFF',
+                      textTransform: 'none',
+                      fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                      fontWeight: 600,
+                      fontSize: { xs: '0.9rem', sm: '0.95rem' },
+                      px: 3,
+                      py: 1.2,
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 14px rgba(106, 190, 82, 0.28)',
+                      transition: 'all 0.25s ease',
+                      '&:hover': {
+                        backgroundColor: '#5BA845',
+                        boxShadow: '0 6px 18px rgba(106, 190, 82, 0.35)',
+                        '& .MuiButton-endIcon': {
+                          transform: 'translateX(3px)',
+                        },
+                      },
+                    }}
+                  >
+                    {buttonText}
+                  </Button>
+                </Box>
               )}
             </Box>
           </Grid>
@@ -186,7 +243,8 @@ export default function FaqAccordionSection({
                 flexDirection: 'column',
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(24px)',
-                transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s',
+                transition:
+                  'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s',
               }}
             >
               {items.map((item, index) => {
@@ -194,12 +252,12 @@ export default function FaqAccordionSection({
 
                 return (
                   <Box
-                    key={item.question}
+                    key={item.question || index}
                     sx={{
-                      borderBottom: '1px solid #F1F5F9',
+                      borderBottom: '1px solid #EAECF0',
                       transition: 'border-color 0.25s ease',
                       '&:hover': {
-                        borderColor: '#E2E8F0',
+                        borderColor: '#D0D5DD',
                       },
                     }}
                   >
@@ -238,7 +296,7 @@ export default function FaqAccordionSection({
                         component="span"
                         sx={{
                           fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                          fontSize: { xs: '1.025rem', sm: '1.125rem' },
+                          fontSize: { xs: '1rem', sm: '1.08rem' },
                           fontWeight: 600,
                           lineHeight: 1.45,
                           color: isOpen ? '#0F172A' : '#1E293B',

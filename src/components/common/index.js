@@ -8,5 +8,9 @@ export { default as BlogGridSection } from './BlogGridSection';
 export { default as FaqAccordionSection } from './FaqAccordionSection';
 export { default as ContactConsultationSection } from './ContactConsultationSection';
 export { default as CustomAutocomplete } from './CustomAutocomplete';
+export { default as ChallengesSection } from './ChallengesSection';
+export { default as ToolsTabsSection } from './ToolsTabsSection';
+export { default as WhyChooseUsSection } from './WhyChooseUsSection';
+export { default as CtaBannerSection } from './CtaBannerSection';
 export { default } from './CustomButton';
 
