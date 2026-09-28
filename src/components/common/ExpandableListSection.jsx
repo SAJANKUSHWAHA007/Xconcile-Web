@@ -161,101 +161,173 @@ export default function ExpandableListSection({
                     gap: { xs: 2, sm: 3, md: 4 },
                   }}
                 >
-                  {/* Left: Number (desktop only) + Icon */}
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: { xs: 1.5, sm: 2.5 },
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                        fontSize: { xs: '1rem', sm: '1.15rem' },
-                        fontWeight: 600,
-                        color: '#6ABE52',
-                        minWidth: { sm: 28, md: 32 },
-                        display: { xs: 'none', md: 'block' },
-                      }}
-                    >
-                      {displayNumber}
-                    </Typography>
+                  {isExpanded && item.focus ? (
+                    <>
+                      {/* Left: Dark Teal Badge + Title & Focus */}
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1.5, sm: 2 }, flex: 1, minWidth: 0 }}>
+                        <Box
+                          sx={{
+                            width: 32,
+                            height: 32,
+                            borderRadius: '6px',
+                            backgroundColor: '#0F3846',
+                            color: '#FFFFFF',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '0.95rem',
+                            fontWeight: 700,
+                            fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                            flexShrink: 0,
+                          }}
+                        >
+                          {item.badgeNumber || parseInt(displayNumber, 10)}
+                        </Box>
 
-                    {item.icon && (
+                        <Box sx={{ minWidth: 0, flex: 1 }}>
+                          <Typography
+                            variant="h6"
+                            component="h3"
+                            sx={{
+                              fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                              fontSize: { xs: '1.05rem', sm: '1.2rem', md: '1.25rem' },
+                              fontWeight: 700,
+                              color: '#0F172A',
+                              lineHeight: 1.3,
+                              mb: 0.35,
+                            }}
+                          >
+                            {item.title}
+                          </Typography>
+
+                          <Typography
+                            sx={{
+                              fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                              fontSize: { xs: '0.85rem', sm: '0.895rem' },
+                              color: '#475467',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            <Box component="span" sx={{ fontWeight: 700, color: '#0F3846' }}>
+                              Focus:{' '}
+                            </Box>
+                            {item.focus}
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      {/* Right: Up Chevron */}
+                      <IconButton
+                        aria-label="collapse item"
+                        sx={{
+                          color: '#64748B',
+                          p: 0.5,
+                          flexShrink: 0,
+                          '&:hover': { color: '#0F172A' },
+                        }}
+                      >
+                        <KeyboardArrowUpIcon sx={{ fontSize: 24 }} />
+                      </IconButton>
+                    </>
+                  ) : (
+                    <>
+                      {/* Left: Number (desktop only) + Icon */}
                       <Box
                         sx={{
-                          color: '#6ABE52',
                           display: 'flex',
                           alignItems: 'center',
-                          justifyContent: 'center',
-                          '& svg': {
-                            fontSize: { xs: 22, sm: 26 },
+                          gap: { xs: 1.5, sm: 2.5 },
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                            fontSize: { xs: '1rem', sm: '1.15rem' },
+                            fontWeight: 600,
+                            color: '#6ABE52',
+                            minWidth: { sm: 28, md: 32 },
+                            display: { xs: 'none', md: 'block' },
+                          }}
+                        >
+                          {displayNumber}
+                        </Typography>
+
+                        {item.icon && (
+                          <Box
+                            sx={{
+                              color: '#6ABE52',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              '& svg': {
+                                fontSize: { xs: 22, sm: 26 },
+                              },
+                            }}
+                          >
+                            {item.icon}
+                          </Box>
+                        )}
+                      </Box>
+
+                      {/* Center: Title + Description */}
+                      <Box sx={{ flex: 1, minWidth: 0 }}>
+                        <Typography
+                          variant="h6"
+                          component="h3"
+                          sx={{
+                            fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                            fontSize: { xs: '1rem', sm: '1.15rem', md: '1.2rem' },
+                            fontWeight: 700,
+                            color: '#0F172A',
+                            lineHeight: 1.3,
+                            mb: { xs: 0, md: item.description ? 0.5 : 0 },
+                          }}
+                        >
+                          {item.title}
+                        </Typography>
+                        {item.description && (
+                          <Typography
+                            sx={{
+                              display: { xs: 'none', md: 'block' },
+                              fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
+                              fontSize: { xs: '0.875rem', sm: '0.935rem' },
+                              color: '#475467',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            {item.description}
+                          </Typography>
+                        )}
+                      </Box>
+
+                      {/* Right: Plus/Minus Toggle Button */}
+                      <IconButton
+                        aria-label={isExpanded ? 'collapse item' : 'expand item'}
+                        sx={{
+                          width: { xs: 30, sm: 34 },
+                          height: { xs: 30, sm: 34 },
+                          borderRadius: '50%',
+                          border: '1.5px solid rgba(106, 190, 82, 0.45)',
+                          color: '#6ABE52',
+                          flexShrink: 0,
+                          p: 0,
+                          transition: 'all 0.25s ease',
+                          '&:hover': {
+                            backgroundColor: '#6ABE52',
+                            color: '#FFFFFF',
+                            borderColor: '#6ABE52',
                           },
                         }}
                       >
-                        {item.icon}
-                      </Box>
-                    )}
-                  </Box>
-
-                  {/* Center: Title + Description */}
-                  <Box sx={{ flex: 1, minWidth: 0 }}>
-                    <Typography
-                      variant="h6"
-                      component="h3"
-                      sx={{
-                        fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                        fontSize: { xs: '1rem', sm: '1.15rem', md: '1.2rem' },
-                        fontWeight: 700,
-                        color: '#0F172A',
-                        lineHeight: 1.3,
-                        mb: { xs: 0, md: item.description ? 0.5 : 0 },
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-                    {item.description && (
-                      <Typography
-                        sx={{
-                          display: { xs: 'none', md: 'block' },
-                          fontFamily: 'var(--font-manrope), "Manrope", sans-serif',
-                          fontSize: { xs: '0.875rem', sm: '0.935rem' },
-                          color: '#475467',
-                          lineHeight: 1.5,
-                        }}
-                      >
-                        {item.description}
-                      </Typography>
-                    )}
-                  </Box>
-
-                  {/* Right: Plus/Minus Toggle Button */}
-                  <IconButton
-                    aria-label={isExpanded ? 'collapse item' : 'expand item'}
-                    sx={{
-                      width: { xs: 30, sm: 34 },
-                      height: { xs: 30, sm: 34 },
-                      borderRadius: '50%',
-                      border: '1.5px solid rgba(106, 190, 82, 0.45)',
-                      color: '#6ABE52',
-                      flexShrink: 0,
-                      p: 0,
-                      transition: 'all 0.25s ease',
-                      '&:hover': {
-                        backgroundColor: '#6ABE52',
-                        color: '#FFFFFF',
-                        borderColor: '#6ABE52',
-                      },
-                    }}
-                  >
-                    {isExpanded ? (
-                      <RemoveIcon sx={{ fontSize: 18 }} />
-                    ) : (
-                      <AddIcon sx={{ fontSize: 18 }} />
-                    )}
-                  </IconButton>
+                        {isExpanded ? (
+                          <RemoveIcon sx={{ fontSize: 18 }} />
+                        ) : (
+                          <AddIcon sx={{ fontSize: 18 }} />
+                        )}
+                      </IconButton>
+                    </>
+                  )}
                 </Box>
 
                 {/* Expandable Details Container */}
@@ -264,12 +336,12 @@ export default function ExpandableListSection({
                     sx={{
                       pb: 3.5,
                       pt: 0.5,
-                      pl: { xs: 1, sm: 5.5, md: 8.5 },
+                      pl: item.focus ? { xs: 1, sm: 2 } : { xs: 1, sm: 5.5, md: 8.5 },
                       pr: { xs: 1, sm: 4 },
                     }}
                   >
                     {/* On mobile, show description at top of opened accordion since it's hidden when closed */}
-                    {item.description && (
+                    {item.description && !item.focus && (
                       <Typography
                         sx={{
                           display: { xs: 'block', md: 'none' },
@@ -294,9 +366,15 @@ export default function ExpandableListSection({
                             display: 'grid',
                             gridTemplateColumns: {
                               xs: '1fr',
-                              sm: item.groups.length === 2 ? 'repeat(2, 1fr)' : '1fr',
+                              sm: item.groupColumns
+                                ? `repeat(${item.groupColumns}, 1fr)`
+                                : item.groups.length === 2
+                                ? 'repeat(2, 1fr)'
+                                : '1fr',
                               md:
-                                item.groups.length === 2
+                                item.groupColumns
+                                  ? `repeat(${item.groupColumns}, 1fr)`
+                                  : item.groups.length === 2
                                   ? 'repeat(2, 1fr)'
                                   : item.groups.length === 3
                                   ? 'repeat(3, 1fr)'

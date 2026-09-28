@@ -319,7 +319,7 @@ export default function ToolsTabsSection({
                   mb: { xs: 3, sm: 3.5, md: 4 },
                 }}
               >
-                {currentTab.name}
+                {currentTab.heading || currentTab.name}
               </Typography>
 
               {/* Tool Pills Grid / Flex Wrap */}

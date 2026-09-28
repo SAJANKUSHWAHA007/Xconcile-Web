@@ -54,7 +54,7 @@ export const navDropdownData = {
         title: 'Outsourced Tax Preparation',
         description: 'Outsourced tax preparation services for U.S. CPA firms and enterprises.',
         icon: <CalculateOutlinedIcon sx={{ fontSize: 22 }} />,
-        href: '#services',
+        href: '/tax-preparation-outsourcing',
       },
       {
         title: 'Outsourced Virtual CFO & FP&A',

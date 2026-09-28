@@ -47,11 +47,12 @@ function useSmoothCount(target, inView, duration = 1800) {
   return value;
 }
 
-function StatItem({ target, suffix, label, inView, index, totalStats, dividerColor, numberColor, labelColor }) {
+function StatItem({ target, suffix, label, inView, index, totalStats, dividerColor, numberColor, labelColor, statAlign = 'left' }) {
   const count = useSmoothCount(target, inView);
 
   const isLeftColMobile = index % 2 === 0;
   const isTopRowMobile = index < 2;
+  const isCenter = statAlign === 'center';
 
   return (
     <Grid
@@ -59,8 +60,8 @@ function StatItem({ target, suffix, label, inView, index, totalStats, dividerCol
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: { xs: 'flex-start', sm: 'center' },
-        textAlign: { xs: 'left', sm: 'center' },
+        alignItems: isCenter ? { xs: 'flex-start', sm: 'center' } : 'flex-start',
+        textAlign: isCenter ? { xs: 'left', sm: 'center' } : 'left',
         px: { xs: 1.5, sm: 2 },
         py: { xs: 1, sm: 0 },
         borderRight: {
@@ -113,6 +114,7 @@ export default function WhyChooseUsSection({
   subtitle,
   features = [],
   stats = [],
+  statAlign = 'left',
   images = {
     img1: { src: '/assets/images/why-choose-us-1.svg', alt: 'Xconcile team celebrating success' },
     img2: { src: '/assets/images/why-choose-us-2.svg', alt: 'Team hands joined together in collaboration' },
@@ -566,6 +568,7 @@ export default function WhyChooseUsSection({
                       dividerColor={statsDividerColor}
                       numberColor={statNumberColor}
                       labelColor={statLabelColor}
+                      statAlign={statAlign}
                     />
                   ))}
                 </Grid>
